@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport",content="width=device-width",initial-scale="1.0" />
+    <title>Employee Details</title>
+    <style>
+        table{
+            border-collapse:collapse;
+            width:100%;
+        }
+        th, td {
+            border: 1pt solid #D8D9DA;
+            padding:8px;
+            text-align:left;
+            font-size:12pt;
+        }
+        th {
+            background-color: #D6EFED;
+            text-align:center;
+        }
+    </style>
+
+</head>
+<body>
+
+    <table id="EmployeeTable">
+        <thead>
+            <tr>
+                <th>Employee Name</th>
+                <th>Designation</th>
+                <th>Date of Joining</th>
+                <th>Address</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+
+        <tbody id="EmployeeData">
+            
+
+        </tbody>
+    </table>
+    <script>
+        const employees = [{
+            name: "Sanskruti Patke", designation: "Technical Writer", joiningDate: "2022-01-01", address: "Pune", salary: 600000
+        }, {
+            name: "Apeksha Bhavsar", designation: "Technical Writer", joiningDate: "2022-01-01", address: "Pune", salary: 620000
+        }];
+
+        function filterAndDisplay() {
+            const filteredEmployees = employees.filter(employee => employee.designation === "Technical writer" && (employee.salary > 500000 && 700000));
+
+            const tableBody = document.getElementById("EmployeeData");
+            tableBody.innerHTML = "";
+
+            filteredEmployees.forEach(employee => {
+                const row = document.createElement('tr');
+                row.innerHTML =
+
+                    <td>$(employee.name)</td>;
+                < td > $(employee.designation)</td >;
+                       <td>$(employee.joiningDate)</td>;
+
+                tableBody.appendChild(row);
+
+            });
+            
+        }
+
+        filterAndDisplay();
+    </script>
+
+</body>
+</html>
